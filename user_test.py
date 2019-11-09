@@ -20,8 +20,12 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.number,"0712345678")
         self.assertEqual(self.new_user.email,"vperry@ms.com")
         self.assertEqual(self.new_user.password,"xyz")
-
-
+    def test_saved_user(self):
+        '''
+        test to show if the user`s details are added into the user list
+        '''
+        self.new_user.saved_user()
+        self.assertEqual(len(User.user_list),1)
   
 if __name__=="__main__":
     unittest.main()
