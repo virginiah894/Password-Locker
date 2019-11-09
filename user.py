@@ -1,12 +1,13 @@
- class User:
-    import pyperclip
+class User:
+    # import pyperclip
   
-    '''
-    A class blueprint that will intantiate users
-    '''
-    user_list=[]
+        '''
+        A class blueprint that will intantiate users
+        '''
+        user_list=[]
     
     def __init__(self,first_name,last_name,username,number,email,password):
+
         '''
         constructor with all class parameters
         '''
@@ -25,13 +26,13 @@
         User.user_list.remove(self)
 
 class Credentials:
-    '''
-    A class for generating the username and password
-    '''
-    credentials_list[]
-    '''
-    An empty list that will be a blueprint for credentials
-    '''
+        '''
+        A class for generating the username and password
+        '''
+        credentials_list[]
+        '''
+        An empty list that will be a blueprint for credentials
+        '''
     # User_credentials 
     def __init__(username,accounts,password):
         '''
@@ -40,8 +41,15 @@ class Credentials:
         self.username = username
         self.accounts = acounts
         self.password = password
-    # def saved_user(self):
-    #     User.user_list.append(self)
+    def saved_credential(self):
+        Credential.credentials_list.append(self)
+    def remove_user(self):
+        '''
+        method for removing a user from the user list
+        '''
+        Credentials.credentials_list.remove(self)
+
+    
 
     @classmethod
     def find_by_username(cls,username):

@@ -1,7 +1,7 @@
 import unittest
 from user import User
 from user import Credentials
-import pyperclip
+# import pyperclip
 class TestUser(unittest.TestCase):
 
     '''
@@ -69,6 +69,21 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credential.username,"kee")
         self.assertEqual(self.new_credential.accounts,"twitter")
         self.assertEqual(self.new_credential.password,"xyz")
+    def test_saved_credential(self):
+        '''
+        test to show if the credentials are added into the credentials  list
+        '''
+        self.new_credential.saved_credential()
+        self.assertEqual(len(Credentials.credentials_list),1)
+    def test_remove_credential(self):
+        ''' A test for testing if we can delete a credential from  the credential  list'''
+        self.new_credential.saved_credential()
+        test_saved_credential= Credentials("vperry","twitter","xyz")
+        test_saved_credential.saved_credential()
+        self.new_credential.test_remove_credential()
+        self.assertEqual(len(Credentials.credentials_list),1)
+
+    
 
 
 
