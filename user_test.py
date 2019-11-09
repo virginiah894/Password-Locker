@@ -10,6 +10,11 @@ class TestUser(unittest.TestCase):
         method to run before and after each test 
         '''
         self.new_user =User("Vee","Perry","vperry","0712345678","vperry@ms.com","xyz")
+    def tearDown(self):
+        '''
+        cleans up after each test is run.
+        '''
+        User.user_list = []
     def test_proper(self):
         '''
         test to show if the object is initialized properly
@@ -26,7 +31,14 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user.saved_user()
         self.assertEqual(len(User.user_list),1)
-  
+    def test_more_user_saved(self):
+        '''
+        Testing if the application can have more users in our user_list
+        '''
+        self.new_user.saved_user()
+        test_saved_user= User("tst","tstba","terry","0712389078","test@yahoo.com.com","test")
+        test_saved_user.saved_user()
+        self.assertEqual(len(User.user_list),2)
 if __name__=="__main__":
     unittest.main()
   
