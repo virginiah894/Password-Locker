@@ -1,5 +1,6 @@
 import unittest
 from user import User
+import pyperclip
 class TestUser(unittest.TestCase):
 
     '''
@@ -60,13 +61,21 @@ class TestUser(unittest.TestCase):
         test to confirm if the user is in the list,if the user does not exist we will get a flase 
         '''
         self.new_user.saved_user()
-        test_saved_user= User("tst","tstba","terry","0712389078","test@yahoo.com.com","test")
+        test_saved_user= User("tst","tstba","terry","0712389078","test@yahoo.com","test")
         test_saved_user.saved_user()
         existing_user = User.user_inlist("terry")
         self.assertTrue(existing_user)
     def test_show_users(self):
         '''This test will list all the users'''
         self.assertEqual(User.list_all(),User.user_list)
+    def test_copy_details(self):
+        '''
+        Test to try get all users credentials
+        '''
+        self.new_user.saved_user()
+        User.copy_details("tst","tstba","terry","0712389078","test@yahoo.com","test")
+        self.assertEqual(self.new_user.first_name.last_name.username .number.email.password,pyperclip.paste())
+
 
 if __name__=="__main__":
     unittest.main()

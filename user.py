@@ -1,4 +1,5 @@
 class User:
+    import pyperclip
   
     '''
     A class blueprint that will intantiate users
