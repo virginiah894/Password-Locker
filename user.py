@@ -1,4 +1,4 @@
-class User:
+ class User:
     import pyperclip
   
     '''
@@ -23,6 +23,21 @@ class User:
         method for removing a user from the user list
         '''
         User.user_list.remove(self)
+
+class Credentials:
+    '''
+    A class for generating the username and password
+    '''
+    credentials_list[]
+    '''
+    An empty list that will be a blueprint for credentials
+    '''
+    # User_cre
+    def __init__(username,password,Accounts):
+        '''
+        An blueprint for the credentials class
+        '''
+
     @classmethod
     def find_by_username(cls,username):
         '''
@@ -44,3 +59,7 @@ class User:
     @classmethod
     def list_all(cls):
         return cls.user_list
+    @classmethod
+    def copy_details(cls,username):
+        user_details = User.find_by_username(username)
+        pyperclip.copy(user_details.first_name.last_name.username .number.email.password)

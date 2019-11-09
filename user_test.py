@@ -1,5 +1,6 @@
 import unittest
 from user import User
+from user import Credentials
 import pyperclip
 class TestUser(unittest.TestCase):
 
@@ -47,6 +48,11 @@ class TestUser(unittest.TestCase):
         test_saved_user.saved_user()
         self.new_user.remove_user()
         self.assertEqual(len(User.user_list),1)
+
+# credentials tests
+
+
+
     def test_get_user_by_username(self):
         '''
         testing to find out if we can get the details of user using the username
