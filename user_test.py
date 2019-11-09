@@ -55,6 +55,15 @@ class TestUser(unittest.TestCase):
         test_saved_user.saved_user()
         found_user  = User.find_by_username("terry")
         self.assertEqual(found_user.email,test_saved_user.email)
+    def test_existing_user(self):
+        '''
+        test to confirm if the user is in the list,if the user does not exist we will get a flase 
+        '''
+        self.new_user.saved_user()
+        test_saved_user= User("tst","tstba","terry","0712389078","test@yahoo.com.com","test")
+        test_saved_user.saved_user()
+        existing_user = User.user_inlist("terry")
+        self.assertTrue(existing_user)
 
 if __name__=="__main__":
     unittest.main()

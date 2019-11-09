@@ -30,3 +30,13 @@ class User:
         for user in cls.user_list:
             if user.username == username:
                 return user
+    @classmethod
+    def user_inlist(cls,username):
+        '''Method for confirming if the username exists.the method'''
+        '''
+        uses username as argument to return a true or false answer
+        '''
+        for user in cls.user_list:
+            if user.username == username:
+                return True
+        return False
