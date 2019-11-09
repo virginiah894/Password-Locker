@@ -17,4 +17,8 @@ class User:
       self.password = password
   def saved_user(self):
       User.user_list.append(self)
-      
+  def remove_user(self):
+      '''
+      method for removing a user from the user list
+      '''
+      User.user_list.remove(self)
