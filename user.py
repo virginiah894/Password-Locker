@@ -40,3 +40,6 @@ class User:
             if user.username == username:
                 return True
         return False
+    @classmethod
+    def list_all(cls):
+        return cls.user_list

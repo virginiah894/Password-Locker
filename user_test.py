@@ -64,6 +64,9 @@ class TestUser(unittest.TestCase):
         test_saved_user.saved_user()
         existing_user = User.user_inlist("terry")
         self.assertTrue(existing_user)
+    def test_show_users(self):
+        '''This test will list all the users'''
+        self.assertEqual(User.list_all(),User.user_list)
 
 if __name__=="__main__":
     unittest.main()
