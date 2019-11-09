@@ -38,7 +38,7 @@ class TestUser(unittest.TestCase):
         Testing if the application can have more users in our user_list
         '''
         self.new_user.saved_user()
-        test_saved_user= User("tst","tstba","terry","0712389078","test@yahoo.com.com","test")
+        test_saved_user= User("tst","tstba","terry","0712389078","test@yahoo.com.com","xyz")
         test_saved_user.saved_user()
         self.assertEqual(len(User.user_list),2)
     def test_remove_user(self):
@@ -50,6 +50,34 @@ class TestUser(unittest.TestCase):
         self.assertEqual(len(User.user_list),1)
 
 # credentials tests
+class TestCredentials(unittest.TestCase):
+
+    def setUp(self):
+        '''
+        method to run before and after each test 
+        '''
+        self.new_credential = Credentials("vperry","twitter","xyz")
+    def tearDown(self):
+        '''
+        cleans up after each test is run.
+        '''
+        Credentials.credentials_list = []
+    def test_proper(self):
+        '''
+        test to show if the object is initialized properly
+        '''
+        self.assertEqual(self.new_credential.username,"kee")
+        self.assertEqual(self.new_credential.accounts,"twitter")
+        self.assertEqual(self.new_credential.password,"xyz")
+
+
+
+
+
+
+
+
+
 
 
 

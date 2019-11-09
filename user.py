@@ -32,11 +32,16 @@ class Credentials:
     '''
     An empty list that will be a blueprint for credentials
     '''
-    # User_cre
-    def __init__(username,password,Accounts):
+    # User_credentials 
+    def __init__(username,accounts,password):
         '''
         An blueprint for the credentials class
         '''
+        self.username = username
+        self.accounts = acounts
+        self.password = password
+    # def saved_user(self):
+    #     User.user_list.append(self)
 
     @classmethod
     def find_by_username(cls,username):
