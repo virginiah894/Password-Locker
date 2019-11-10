@@ -8,9 +8,13 @@ VirginiahPeriah[virginiah894]
 An application that allows users to create and generate passwords that they can use on different applications
 
 ## Behaviour Driven Development(BDD)
-Below are the fuctions on the website;
-
-The user views quotes. Clicks and views more details about the quote i.e the author,when published and the peron who submitted it.
+This application enables users to:
+1. Fill in their details so as to have an account
+2. Save their credentials i.e .their passwors and username
+3. Store their credentials for future use
+4. Create a password to use in each application
+5. View all their passwords and credentials for other accounts
+5. Delete credentials they no longer require.
 
 The user gets to add a quote in a form based on the input requirements on the form.
 
