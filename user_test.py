@@ -1,6 +1,6 @@
 import unittest
-from user import User
-from user import Credentials
+from user import User,Credentials
+
 # import pyperclip
 class TestUser(unittest.TestCase):
 
@@ -8,6 +8,9 @@ class TestUser(unittest.TestCase):
     creating test cases using the TestCase class
     '''
     def setUp(self):
+        
+
+
         '''
         method to run before and after each test 
         '''
@@ -66,7 +69,7 @@ class TestCredentials(unittest.TestCase):
         '''
         test to show if the object is initialized properly
         '''
-        self.assertEqual(self.new_credential.username,"kee")
+        self.assertEqual(self.new_credential.username,"vperry")
         self.assertEqual(self.new_credential.accounts,"twitter")
         self.assertEqual(self.new_credential.password,"xyz")
     def test_saved_credential(self):
@@ -80,50 +83,37 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.saved_credential()
         test_saved_credential= Credentials("vperry","twitter","xyz")
         test_saved_credential.saved_credential()
-        self.new_credential.test_remove_credential()
+        self.new_credential.remove_credential()
         self.assertEqual(len(Credentials.credentials_list),1)
-
-    
-
-
-
-
-
-
-
-
-
-
-
 
     def test_get_user_by_username(self):
         '''
         testing to find out if we can get the details of user using the username
         '''
-        self.new_user.saved_user()
-        test_saved_user= User("tst","tstba","terry","0712389078","test@yahoo.com.com","test")
-        test_saved_user.saved_user()
-        found_user  = User.find_by_username("terry")
-        self.assertEqual(found_user.email,test_saved_user.email)
+        self.new_credential.saved_credential()
+        test_saved_credential= Credentials("vperry","twitter","xyz")
+        test_saved_credential.saved_credential()
+        found_cresential  = Credentials.find_by_username("vperry")
+        self.assertEqual(found_cresential.accounts,test_saved_credential.accounts)
     def test_existing_user(self):
         '''
         test to confirm if the user is in the list,if the user does not exist we will get a flase 
         '''
-        self.new_user.saved_user()
-        test_saved_user= User("tst","tstba","terry","0712389078","test@yahoo.com","test")
-        test_saved_user.saved_user()
-        existing_user = User.user_inlist("terry")
-        self.assertTrue(existing_user)
+        self.new_credential.saved_credential()
+        test_saved_credential= Credentials("vperry","twitter","xyz")
+        test_saved_credential.saved_credential()
+        existing_credental = Credentials.credentials_inlist("vperry")
+        self.assertTrue(existing_credental)
     def test_show_users(self):
         '''This test will list all the users'''
-        self.assertEqual(User.list_all(),User.user_list)
+        self.assertEqual(Credentials.list_all(),Credentials.credentials_list)
     def test_copy_details(self):
         '''
         Test to try get all users credentials
         '''
-        self.new_user.saved_user()
-        User.copy_details("tst","tstba","terry","0712389078","test@yahoo.com","test")
-        self.assertEqual(self.new_user.first_name.last_name.username .number.email.password,pyperclip.paste())
+        # self.new_credential.saved_credential()
+        # Credentials.copy_details("vperry","twitter","xyz")
+        # self.assertEqual(self.username.accounts .password,pyperclip.paste())
 
 
 if __name__=="__main__":
