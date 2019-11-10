@@ -1,4 +1,5 @@
 #!/urs/bin/env python3.6
+import pyperclip
 from user import User,Credentials
 def create_account_user(nameA,nameB,Pnumber,Pemail):
   '''
@@ -122,6 +123,8 @@ def main():
 
 
 
+if __name__ == '__main__':
+	main()
 
                                       
 
