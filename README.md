@@ -16,12 +16,6 @@ This application enables users to:
 5. View all their passwords and credentials for other accounts
 5. Delete credentials they no longer require.
 
-The user gets to add a quote in a form based on the input requirements on the form.
-
-The user can upvote,downvote and delete quotes.
-
-The user can view the date when the quote was posted and how long ago it was.
-
 ## Technologies Used
 Python
 
