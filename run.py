@@ -76,101 +76,104 @@ def main():
     new_name = input()
     print(f"{new_name}. What do you want to do?")
     print("\n")
-    print("Use this codes: \n CUA-create user account \n AC-Add your credentials \n Q-leave the application")
-    user_code = input().upper().strip()
-    if user_code == "Q":
-      print("Goodbye")
-      sys.exit()
-    
-    elif user_code == "CUA":
 
-      print("New Contact")
-      print("New User Details")
-      print("Please enter your first name ....")
+    while True:
+      print("Use this codes: \n CUA-create user account \n AC-Add your credentials \n Q-leave the application")
+      user_code = input().upper().strip()
+      if user_code == "Q":
+        print("Goodbye")
+        sys.exit()
+      
+      elif user_code == "CUA":
+        
+        print("New Contact")
+        print("New User Details")
+        print("Please enter your first name ....")
 
-      nameA = input()
+        nameA = input()
 
-      print("Please enter your last name ...")
+        print("Please enter your last name ...")
 
-      nameB = input()
+        nameB = input()
 
-      print("Please enter your Phone number ...")
+        print("Please enter your Phone number ...")
 
-      Pnumber = input()
+        Pnumber = input()
 
-      print("Plase Enter your email address ...")
-      Pemail = input()
-      saving_users(create_account_user(nameA, nameB, Pnumber, Pemail))
-      '''
-      This creates and saves user details
-      '''
-      print(f"Here are your account Details, {nameA}  ....{nameB}.....{Pnumber}.....{Pemail}")
-
-      print("\n")
-
-    elif user_code == "AC":
-        print('To signup, enter your credentials :')
-        print("Enter your preferred Username ")
-        usernameA = input()
-        print("Enter your referrence account  eg facebook,twitter")
-        accountsA = input()
-        print("Enter your preferred Password ")
-        passwordA = input()
-        saving_credentials(create_account_credentials(usernameA, accountsA, passwordA))
+        print("Plase Enter your email address ...")
+        Pemail = input()
+        saving_users(create_account_user(nameA, nameB, Pnumber, Pemail))
         '''
-        function that takes the user input on credentials and saves the credentials
+        This creates and saves user details
         '''
-        print(f"Here are your credentials Details, {usernameA}  ....{accountsA}.....{passwordA}")
+        print(f"Here are your account Details, {nameA}  ....{nameB}.....{Pnumber}.....{Pemail}")
+
         print("\n")
-    #     existing_credential_list(saving_credentials)
-    #     '''
-        
-    # Function to confirm if the Credentials are in the list
-    # '''
     
-        
-    
-        # print(f"Dear {usernameA}.Select the options below to continue")
-        
-        print(f"Hi {usernameA}.Select an option")
-        print('')
-        while True:
-          print("Here are the codes:\n sc-show credentials \n gc -get generated password \n cp-Create your password \n dc-delete credentials\n q-Quit")
-          access_code = input().lower()
+
+      elif user_code == "AC":
+          print('To signup, enter your credentials :')
+          print("Enter your preferred Username ")
+          usernameA = input()
+          print("Enter your referrence account  eg facebook,twitter")
+          accountsA = input()
+          print("Enter your preferred Password ")
+          passwordA = input()
+          saving_credentials(create_account_credentials(usernameA, accountsA, passwordA))
+          '''
+          function that takes the user input on credentials and saves the credentials
+          '''
+          print(f"Here are your credentials Details, {usernameA}  ....{accountsA}.....{passwordA}")
+          print("\n")
+      #     existing_credential_list(saving_credentials)
+      #     '''
           
-          if access_code == "q":
+      # Function to confirm if the Credentials are in the list
+      # '''
+      
+          
+      
+          # print(f"Dear {usernameA}.Select the options below to continue")
+          
+          print(f"Hi {usernameA}.Select an option")
+          print('')
+          while True:
+            print("Here are the codes:\n sc-show credentials \n gc -get generated password \n cp-Create your password \n dc-delete credentials\n q-Quit")
+            access_code = input().lower()
             
-            print("Goodbye")
-            sys.exit()
+            if access_code == "q":
               
-            
+              print("Goodbye")
+              sys.exit()
+                
+              
 
-          elif access_code == "sc":
-              print(f"Here are your credentials \n {usernameA}.{accountsA}.{passwordA} ")
-              print("\n")
-              print("Confirm if credentials are in system?\n please enter your username")
-              response = input().lower().strip()
+            elif access_code == "sc":
+                print(f"Here are your credentials \n {usernameA}.{accountsA}.{passwordA} ")
+                print("\n")
+                print("Confirm if credentials are in system?\n please enter your username")
+                response = input().lower().strip()
 
-              if existing_credential_list(response):
-                  print("Credentials found")
-              else:
-                  print(" Credentials do not match")
-          elif access_code == "gc":
+                if existing_credential_list(response):
+                    print("Credentials found")
+                else:
+                    print(" Credentials do not match")
+            elif access_code == "gc":
 
-              print(" Your Password is autogenerated")
-              password = "xyzabc"
-              print(f"{password}")
-          elif access_code == "cp":
-              print("Create your  password here")
-              new_password = input().lower()
-              print(f"Your password is {new_password}")
-          elif access_code == "dc":
-              print("Please Enter your Username")
-              usernameA = input().lower().strip()
+                print(" Your Password is autogenerated")
+                password = "xyzabc"
+                print(f"{password}")
+            elif access_code == "cp":
+                print("Create your  password here")
+                new_password = input().lower()
+                print(f"Your password is {new_password}")
+            elif access_code == "dc":
+                print("Please Enter your Username")
+                usernameA = input().lower().strip()
 
-              deleting_credentials(usernameA)
-              print("Your credentials have been deleted")
-              return
+                deleting_credentials(usernameA)
+                print("Your credentials have been deleted")
+                
 
 
 if __name__ == '__main__':
